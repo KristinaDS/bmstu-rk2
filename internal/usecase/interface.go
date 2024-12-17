@@ -1,6 +1,9 @@
 package usecase
 
-import "github.com/ValeryBMSTU/web-rk2/internal/entities"
+import (
+	"bmstu-rk2/internal/entities"
+	"time"
+)
 
 type Provider interface {
 	InsertUser(entities.User) (*entities.User, error)
@@ -12,4 +15,9 @@ type Provider interface {
 
 	UpdateUserByID(id int, user entities.User) (*entities.User, error)
 	DeleteUserByID(id int) error
+
+	CreateEvent(entities.Event) (*entities.Event, error)
+	GetEvents(start, end time.Time) ([]entities.Event, error)
+	UpdateEvent(event entities.Event) (*entities.Event, error)
+	DeleteEvent(id int) error
 }

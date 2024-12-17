@@ -1,13 +1,14 @@
 package main
 
 import (
+	"bmstu-rk2/internal/api"
+	"bmstu-rk2/internal/config"
+	"bmstu-rk2/internal/provider"
+	"bmstu-rk2/internal/usecase"
 	"flag"
-	"github.com/ValeryBMSTU/web-rk2/internal/api"
-	"github.com/ValeryBMSTU/web-rk2/internal/config"
-	"github.com/ValeryBMSTU/web-rk2/internal/provider"
-	"github.com/ValeryBMSTU/web-rk2/internal/usecase"
-	_ "github.com/lib/pq"
 	"log"
+
+	_ "github.com/lib/pq"
 )
 
 func main() {
