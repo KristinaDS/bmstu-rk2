@@ -1,6 +1,9 @@
 package usecase
 
-import "github.com/ValeryBMSTU/web-rk2/internal/entities"
+import (
+	"bmstu-rk2/internal/entities"
+	"time"
+)
 
 func (u *Usecase) CreateUser(user entities.User) (*entities.User, error) {
 	if user, err := u.p.SelectUserByEmail(user.Email); err != nil {
@@ -77,4 +80,20 @@ func (u *Usecase) DeleteUserByID(id int) error {
 	}
 
 	return nil
+}
+
+func (u *Usecase) CreateEvent(event entities.Event) (*entities.Event, error) {
+	return u.p.CreateEvent(event)
+}
+
+func (u *Usecase) GetEvents(start, end time.Time) ([]entities.Event, error) {
+	return u.p.GetEvents(start, end)
+}
+
+func (u *Usecase) UpdateEvent(event entities.Event) (*entities.Event, error) {
+	return u.p.UpdateEvent(event)
+}
+
+func (u *Usecase) DeleteEvent(id int) error {
+	return u.p.DeleteEvent(id)
 }

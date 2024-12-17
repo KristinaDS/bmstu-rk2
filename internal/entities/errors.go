@@ -8,4 +8,6 @@ var (
 	ErrUserEmailConflict = errors.New("user email conflict")
 
 	ErrUserNotFound = errors.New("user not found")
+
+	ErrEventNotFound = errors.New("event not found")
 )
